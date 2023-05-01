@@ -1,0 +1,15 @@
+.post-preview {
+  .bd-placeholder-img {
+    text-anchor: middle;
+  }
+
+  .post-title {
+    a {
+      color: var(--bs-card-color);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

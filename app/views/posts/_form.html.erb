@@ -1,21 +1,28 @@
 <%= form_with model: post do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% post.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <% if post.errors.present? %>
+    <div id="error_explanation" class="card border-danger mb-3">
+      <div class="card-body text-danger">
+        <h5 class="card-title"><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h5>
+        <ul>
+          <% post.errors.full_messages.each do |msg| %>
+            <li class="card-text"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :body, class: 'form-label' %>
+    <%= form.text_area :body, class: 'form-control', rows: 3 %>
   </div>
 
   <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-    <% post.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit 'Save', class: 'btn btn-outline-primary' %>
   </div>
 <% end %>
