@@ -1,18 +1,23 @@
-<div class="clearfix">
-  <h1 class="float-start"><%= @post.title %></h1>
-  <div class="float-end">
-    <p><%= link_to 'Edit post', edit_post_path(@post) %></p>
-    <p><%= link_to 'Delete post', post_path(@post), data: {
+<div class="container mt-5">
+  <h1><%= @post.title %></h1>
+  <p class="text-muted"><%= time_ago_in_words @post.created_at %></p>
+  <p><%= @post.body %></p>
+
+  <div class="btn-group mb-5" role="group" aria-label="Basic outlined example">
+    <%= link_to 'Edit post', edit_post_path(@post), class: 'btn btn-outline-secondary' %>
+    <%= link_to 'Delete post', post_path(@post), class: 'btn btn-outline-danger', data: {
       turbo_method: :delete,
       turbo_confirm: 'Are you sure?'
-    } %></p>
+    } %>
   </div>
+
+  <% if @post.comments.present? %>
+    <div class="mb-5">
+      <h4>Comments</h4>
+      <%= render @post.comments %>
+    </div>
+  <% end %>
+
+  <h4>Add a comment:</h4>
+  <%= render 'comments/form' %>
 </div>
-<p><%= @post.created_at %></p>
-<p><%= @post.body %></p>
-
-<h4>Comments</h4>
-<%= render @post.comments %>
-
-<h4>Add a comment:</h4>
-<%= render 'comments/form' %>
