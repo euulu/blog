@@ -1,3 +1,6 @@
-<h1><%= @post.title %></h1>
+<div class="clearfix">
+  <h1 class="float-start"><%= @post.title %></h1>
+  <p class="float-end"><%= link_to 'Edit post', edit_post_path(@post) %></p>
+</div>
 <p><%= @post.created_at %></p>
 <p><%= @post.body %></p>
