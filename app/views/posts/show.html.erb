@@ -1,0 +1,18 @@
+<div class="clearfix">
+  <h1 class="float-start"><%= @post.title %></h1>
+  <div class="float-end">
+    <p><%= link_to 'Edit post', edit_post_path(@post) %></p>
+    <p><%= link_to 'Delete post', post_path(@post), data: {
+      turbo_method: :delete,
+      turbo_confirm: 'Are you sure?'
+    } %></p>
+  </div>
+</div>
+<p><%= @post.created_at %></p>
+<p><%= @post.body %></p>
+
+<h4>Comments</h4>
+<%= render @post.comments %>
+
+<h4>Add a comment:</h4>
+<%= render 'comments/form' %>

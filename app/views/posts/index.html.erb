@@ -1,0 +1,13 @@
+<h1>Posts#index</h1>
+<div class="my-4">
+  <%= link_to 'Create new post', new_post_path %>
+</div>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h3><%= link_to post.title, post_path(post) %></h3>
+      <p><%= post.body %></p>
+    </li>
+  <% end %>
+</ul>
