@@ -1,13 +1,13 @@
 <%= form_with model: [@post, @post.comments.build] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="mb-3">
+    <%= form.label :author, class: 'form-label' %><br>
+    <%= form.text_field :author, class: 'form-control', placeholder: 'John Doe' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :body, class: 'form-label' %><br>
+    <%= form.text_area :body, class: 'form-control', rows: 3 %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit 'Add comment', class: 'btn btn-outline-primary' %>
+  </div>
 <% end %>

@@ -1,8 +1,9 @@
-<p>
-  <strong>Comment author:</strong>
-  <%= comment.author %>
-</p>
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+<div class="card mb-3 shadow-sm">
+  <div class="card-body">
+    <div class="d-flex justify-content-start align-items-center mb-1">
+      <h6 class="card-title mb-0 me-1"><%= comment.author %></h6>
+      <p class="m-0 text-muted">wrote <%= time_ago_in_words comment.created_at %></p>
+    </div>
+    <p class="card-text"><%= comment.body %></p>
+  </div>
+</div>
