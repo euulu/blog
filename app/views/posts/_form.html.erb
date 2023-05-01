@@ -1,7 +1,6 @@
 <%= form_with model: post do |form| %>
   <% if post.errors.present? %>
     <div id="error_explanation" class="card border-danger mb-3">
-<!--      <div class="card-header">Header</div>-->
       <div class="card-body text-danger">
         <h5 class="card-title"><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h5>
         <ul>

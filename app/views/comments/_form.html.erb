@@ -1,3 +1,4 @@
+<!-- TODO: add validation; don't allow to add empty comments -->
 <%= form_with model: [@post, @post.comments.build] do |form| %>
   <div class="mb-3">
     <%= form.label :author, class: 'form-label' %><br>
