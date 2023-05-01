@@ -1,6 +1,17 @@
-<h1>Posts#index</h1>
-<div class="my-4">
-  <%= link_to 'Create new post', new_post_path %>
+<div class="px-4 py-4 my-5 text-center">
+  <h1 class="mt-5 display-5 fw-bold">The blog</h1>
+  <div class="col-lg-8 mx-auto">
+    <p class="lead mb-2">Welcome to our blog!</p>
+    <p class="lead mb-4">We are a team of passionate writers dedicated to bringing you informative and engaging content
+      on a variety of topics. From the latest trends in technology and business to health and wellness tips, we cover it
+      all. Our mission is to provide you with valuable insights that will inspire you to live your best life. Whether
+      you're a busy professional looking for ways to improve your productivity or a health enthusiast searching for new
+      ways to stay fit, we've got you covered.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <%= link_to 'Create new post', new_post_path, class: 'btn btn-primary btn-lg px-4 gap-3' %>
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4">Sample button</button>
+    </div>
+  </div>
 </div>
 
 <ul>
