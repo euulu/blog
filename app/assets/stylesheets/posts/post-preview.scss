@@ -3,6 +3,11 @@
     text-anchor: middle;
   }
 
+  .post-image {
+    height: 225px;
+    object-fit: cover;
+  }
+
   .post-title {
     a {
       color: var(--bs-card-color);
