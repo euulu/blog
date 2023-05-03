@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  include Pagy::Backend
+
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @pagy, @posts = pagy(Post.all.order(created_at: :desc))
   end
 
   def show
