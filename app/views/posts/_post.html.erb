@@ -1,9 +1,13 @@
 <div class="col post-preview">
-  <div class="card shadow-sm">
-    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-      <rect width="100%" height="100%" fill="#55595c"></rect>
-      <text x="50%" y="50%" fill="#eceeef" dy=".3em">Image will be added later</text>
-    </svg>
+  <div class="card shadow-sm overflow-hidden">
+    <% if post.image.present? %>
+      <%= image_tag post.image, class: 'post-image' %>
+    <% else %>
+      <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="#55595c"></rect>
+        <text x="50%" y="50%" fill="#eceeef" dy=".3em">Image will be added later</text>
+      </svg>
+    <% end %>
 
     <div class="card-body">
       <h4 class="post-title text-truncate"><%= link_to post.title, post_path(post), class: 'fw-semibold mb-0' %></h4>
